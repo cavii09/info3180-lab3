@@ -45,8 +45,9 @@ def contact():
         msg = Message("Your subject", sender=("Sender name","myemail@example.com"), recipients = ["myaddress@example.com"])
         msg.body = 'This is the body of the message'
         mail.send(msg)
-        flash('Message sent succesfully!')
-        return redirect(url_for('home'))
+      flash('Message sent succesfully.', 'success')
+      return redirect(url_for('home'))
+
     return render_template('contact.html', form=form)    
 
 
